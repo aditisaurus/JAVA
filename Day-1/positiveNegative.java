@@ -11,7 +11,7 @@ public class positiveNegative {
         printArray(arr, n);
     }
 
-    public static void rearrange(int arr, int n) {
+    static void rearrange(int arr[], int n) {
         int i = -1, temp = 0;
         for (int j = 0; j < n; j++) {
             if (arr[j] < 0) {
@@ -25,7 +25,7 @@ public class positiveNegative {
         int pos = i + 1;
         int neg = 0;
 
-        while (n > pos && neg > pos && arr[neg] < 0) {
+        while (pos < n && neg < pos && arr[neg] < 0) {
             temp = arr[neg];
             arr[neg] = arr[pos];
             arr[pos] = temp;
