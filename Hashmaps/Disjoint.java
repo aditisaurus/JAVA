@@ -4,7 +4,7 @@ import java.util.*;
 public class Disjoint {
 
     public static void main(String args[]) {
-        disjoint1 dis = new disjoint1();
+        Disjoint dis = new Disjoint();
         int set1[] = { 12, 34, 11, 9, 3 };
         int set2[] = { 7, 2, 1, 5 };
 
