@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Node{
     int data;
     Node left,right;
@@ -20,24 +22,24 @@ public class LcaBst {
         tree.root.left.right = new Node(8);
         tree.root.right.right = new Node(60);
         tree.root.right.left = new Node(25);
-        System.out.print(tree.root + " mess");
     
-        System.out.print(tree.lca(tree.root, 5, 3));
+        Node t =tree.lca(tree.root, 5, 3);
+        System.out.println("LCA of 5 and 3 is " + t.data);
     }
 
     public Node lca (Node root, int n1, int n2)
     {
+        if(root == null)
+        return null;
+
         if(root.data > Math.max(n1 , n2))
-        {
             return lca(root.left, n1, n2);
 
-        }
-        else if(root.data < Math.max(n1, n2))
-        {
+        
+         if(root.data < Math.max(n1, n2))
             return lca(root.right, n1, n2);
-        }
-        else 
-        return root;
+        
+         return root;
     }
 
 
