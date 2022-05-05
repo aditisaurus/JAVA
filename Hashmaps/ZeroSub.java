@@ -1,6 +1,4 @@
 import java.util.HashSet;
-import java.util.*;
-import java.io.*;
 import java.uti.Set;
 
 public ZeroSub {
@@ -19,15 +17,14 @@ public ZeroSub {
     {
         HashSet<Integer> hs = new HashSet<Integer>();
  
+         
         int sum = 0;
  
         for (int i = 0; i < arr.length; i++)
         {
             sum += arr[i];
  
-            if (arr[i] == 0
-                || sum == 0
-                || hs.contains(sum))
+            if (arr[i] == 0 || sum == 0 || hs.contains(sum))
                 return true;
  
             hs.add(sum);
