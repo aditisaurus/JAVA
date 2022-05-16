@@ -1,48 +1,65 @@
-public class DetectLoop {
+import java.util.*;
+import java.util.HashMap;
 
-    public static void main(String args[]) {
-        DetectLoop llist = new DetectLoop();
+public class DetectLoop2 {
+
+    public static void main(String[] args)
+    {
+        DetectLoop2 llist = new DetectLoop2();
+ 
         llist.push(20);
         llist.push(4);
         llist.push(15);
         llist.push(10);
-
+ 
         llist.head.next.next.next.next = llist.head;
-
-        if (Loop(head))
-            System.out.print("Loop found");
+ 
+        if (detectLoop(head))
+            System.out.println("Loop found");
         else
-            System.out.print("Loop not found");
+            System.out.println("No Loop");
     }
 
-    static Node head;
-
+    static Node head; 
+ 
     static class Node {
-        Node next;
         int data;
-
-        Node(int d) {
+        Node next;
+        Node(int d)
+        {
             data = d;
             next = null;
         }
     }
-
-    public void push(int new_data) {
+ 
+    static public void push(int new_data)
+    {
+    
         Node new_node = new Node(new_data);
+ 
         new_node.next = head;
+ 
         head = new_node;
     }
 
-    static boolean Loop(Node h) {
-        HashSet<Node> s = new HashSet();
+
+    static boolean detectLoop(Node h)
+    {
+        HashSet<Node> s = new HashSet<Node>();
         while (h != null) {
+    
             if (s.contains(h))
                 return true;
 
             s.add(h);
+ 
             h = h.next;
         }
-
+ 
         return false;
     }
+
+
+    
 }
+
